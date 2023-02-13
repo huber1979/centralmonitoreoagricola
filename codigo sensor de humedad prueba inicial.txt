@@ -1,0 +1,26 @@
+
+
+void setup() {
+    //Paso 1
+    Serial.begin(9600);
+    Serial.println("Valor del sensor de humedad");
+  
+}
+  
+void loop() {
+    //Paso 2
+    int humidity = analogRead(A0);
+    Serial.print("Lectura:");
+    Serial.println(humidity);
+    //Paso 3
+    if(humidity >= 0 & humidity <= 200){
+        Serial.println("Sensor en agua");  
+    } else if(humidity > 200 & humidity <= 650){
+        Serial.println("Sensor en suelo húmedo");
+    }else if(humidity >= 650){
+        Serial.println("Sensor en suelo seco");
+    }
+    delay(1000);
+
+
+}
